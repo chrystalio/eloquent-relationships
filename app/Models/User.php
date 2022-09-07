@@ -42,6 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function latest()
+    {
+        return static::orderBy('created_at', 'desc');
+    }
+
     /**
      * Get the phone record associated with the user.
      */
